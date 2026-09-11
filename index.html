@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RESCUE+ — Emergency & Circularity</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="RESCUE+ accueil">
+      <span class="brand-mark">+</span>
+      <span>RESCUE<span>+</span></span>
+    </a>
+    <nav>
+      <a href="#kit">Mon kit</a>
+      <a href="#emergency">Urgence</a>
+      <a href="#passport">Passeport</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu">☰</button>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">CIRCULAR EMERGENCY EQUIPMENT</div>
+        <h1>Votre sac.<br><span>Votre sécurité.</span><br>Votre impact.</h1>
+        <p class="hero-text">
+          Un sac d'urgence conçu à partir de matériaux professionnels en fin de vie,
+          avec un passeport numérique et un mode urgence accessible en un scan. 
+          
+          1 sac sur 2 distribué à des ONGs mondiales.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#kit">Découvrir mon kit <span>→</span></a>
+          <a class="btn secondary" href="#passport">Voir mon impact</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>2,0 kg</strong><span>de matières réemployées</span></div>
+          <div><strong>4</strong><span>scénarios d'urgence</span></div>
+          <div><strong>100%</strong><span>traçabilité du prototype</span></div>
+        </div>
+      </div>
+
+      <div class="bag-stage">
+        <div class="pulse"></div>
+        <div class="bag">
+          <div class="bag-top">RESCUE+</div>
+          <div class="bag-reflect"></div>
+          <div class="bag-pocket">
+            <span>02481</span>
+            <span class="mini-cross">+</span>
+          </div>
+          <div class="bag-bottom"></div>
+        </div>
+        <div class="floating-tag tag-one">🧑‍🚒 Textile pompier</div>
+        <div class="floating-tag tag-two">🛞 Caoutchouc recyclé</div>
+        <div class="floating-tag tag-three">▣ QR / NFC</div>
+      </div>
+    </section>
+
+    <section class="scan-banner">
+      <div>
+        <span class="small-label">SMART BAG</span>
+        <h2>Un scan transforme le sac en assistant d'urgence.</h2>
+      </div>
+      <button class="scan-btn" id="scanBtn">▣ Scanner mon RESCUE+</button>
+    </section>
+
+    <section id="kit" class="section">
+      <div class="section-heading">
+        <div>
+          <span class="small-label">01 — MON KIT</span>
+          <h2>Prêt quand vous l'êtes.</h2>
+        </div>
+        <div class="kit-status"><span class="status-dot"></span><b id="kitScore">80%</b> opérationnel</div>
+      </div>
+
+      <div class="dashboard-grid">
+        <div class="card kit-card">
+          <div class="card-head">
+            <div><span class="card-kicker">RESCUE+ #02481</span><h3>Vérification du matériel</h3></div>
+            <button class="icon-btn" id="resetKit" title="Réinitialiser">↻</button>
+          </div>
+          <div id="equipmentList" class="equipment-list"></div>
+        </div>
+
+        <div class="card qr-card">
+          <div class="qr-placeholder">
+            <div class="qr-grid">
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><b>+</b><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <span class="card-kicker">IDENTITÉ NUMÉRIQUE</span>
+          <h3>RESCUE+ #02481</h3>
+          <p>Scannez le QR code pour accéder au kit, aux consignes et au passeport environnemental.</p>
+          <button class="text-btn" id="scanCardBtn">Simuler un scan →</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="emergency" class="section emergency-section">
+      <div class="section-heading">
+        <div>
+          <span class="small-label">02 — MODE URGENCE</span>
+          <h2>Que se passe-t-il ?</h2>
+        </div>
+        <span class="live-pill">● ASSISTANCE RAPIDE</span>
+      </div>
+
+      <div class="risk-grid" id="riskGrid">
+        <button class="risk-card active" data-risk="flood"><span>🌊</span><b>Inondation</b><small>Évacuation & mise en sécurité</small></button>
+        <button class="risk-card" data-risk="fire"><span>🔥</span><b>Incendie</b><small>Évacuation & protection</small></button>
+        <button class="risk-card" data-risk="storm"><span>🌪️</span><b>Tempête</b><small>Abri & vigilance</small></button>
+        <button class="risk-card" data-risk="heat"><span>☀️</span><b>Canicule</b><small>Hydratation & prévention</small></button>
+      </div>
+
+      <div class="emergency-panel" id="emergencyPanel"></div>
+    </section>
+
+    <section id="passport" class="section passport-section">
+      <div class="section-heading">
+        <div>
+          <span class="small-label">03 — PASSEPORT ENVIRONNEMENTAL</span>
+          <h2>La seconde vie, mesurée.</h2>
+        </div>
+        <span class="passport-id">ID #02481</span>
+      </div>
+
+      <div class="passport-grid">
+        <div class="impact-card big-impact">
+          <div class="impact-icon">♻</div>
+          <span class="card-kicker">MATIÈRES RÉEMPLOYÉES</span>
+          <strong>2,0 <small>kg</small></strong>
+          <p>de matières détournées du rebut pour ce prototype.</p>
+          <div class="progress"><span style="width: 85%"></span></div>
+          <div class="progress-label"><span>Part réemployée</span><b>85%</b></div>
+        </div>
+
+        <div class="impact-card material">
+          <span class="material-icon">🧑‍🚒</span>
+          <div><span class="card-kicker">TEXTILE</span><h3>Ancienne tenue pompier</h3><p>Textile technique valorisé pour la structure extérieure.</p></div>
+          <b>1,2 kg</b>
+        </div>
+
+        <div class="impact-card material">
+          <span class="material-icon">🛞</span>
+          <div><span class="card-kicker">CAOUTCHOUC</span><h3>Pneu usagé</h3><p>Utilisé pour les renforts, le fond et certaines poignées.</p></div>
+          <b>0,8 kg</b>
+        </div>
+
+        <div class="impact-card lifecycle">
+          <span class="card-kicker">CYCLE DE VIE</span>
+          <div class="timeline">
+            <div class="timeline-item done"><span>01</span><div><b>Collecte</b><small>Matériaux professionnels en fin de vie</small></div></div>
+            <div class="timeline-item done"><span>02</span><div><b>Transformation</b><small>Découpe, assemblage, prototypage</small></div></div>
+            <div class="timeline-item current"><span>03</span><div><b>Utilisation</b><small>Kit d'urgence connecté</small></div></div>
+            <div class="timeline-item"><span>04</span><div><b>Retour</b><small>Réemploi ou recyclage en fin de vie</small></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="business-section">
+      <div class="business-copy">
+        <span class="small-label">BUSINESS MODEL</span>
+        <h2>Plus qu'un sac : une solution de résilience.</h2>
+        <p>RESCUE+ peut être déployé auprès des particuliers, entreprises, écoles et collectivités.</p>
+        <div class="business-pills">
+          <span>B2C</span><span>B2B</span><span>Collectivités</span><span>Économie circulaire</span>
+        </div>
+      </div>
+      <div class="business-cards">
+        <div><b>RESCUE+ HOME</b><strong>149 €</strong><small>Kit individuel</small></div>
+        <div><b>RESCUE+ WORK</b><strong>109 €</strong><small>À partir de 50 unités</small></div>
+        <div><b>RESCUE+ CITY</b><strong>Sur devis</strong><small>Déploiement territorial</small></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand"><span class="brand-mark">+</span><span>RESCUE<span>+</span></span></div>
+    <p>Prototype étudiant — Transition écologique · Polytech Lille</p>
+    <span>2026</span>
+  </footer>
+
+  <div class="toast" id="toast" role="status"></div>
+  <div class="modal-backdrop" id="modal">
+    <div class="modal">
+      <button class="modal-close" id="modalClose">×</button>
+      <span class="small-label">SIMULATION DE SCAN</span>
+      <h2>RESCUE+ #02481 détecté</h2>
+      <p>Identité numérique chargée. Vous pouvez maintenant vérifier le kit, accéder au mode urgence et consulter son passeport environnemental.</p>
+      <div class="modal-actions">
+        <button class="btn primary" id="goKit">Vérifier le kit</button>
+        <button class="btn secondary" id="goPassport">Voir l'impact</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
