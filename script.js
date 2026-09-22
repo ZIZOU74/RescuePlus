@@ -13,28 +13,28 @@ const equipment = [
 const risks = {
   flood: {
     title:"Inondation",
-    icon:"🌊",
+    icon:"" ,
     intro:"Priorité : vous éloigner de l'eau et rejoindre une zone sûre. Ne traversez jamais une zone inondée à pied ou en voiture.",
     steps:["Rejoignez un point en hauteur et suivez les consignes officielles.","Coupez l'électricité si cela peut être fait sans danger.","Prenez votre RESCUE+ et vos documents essentiels.","Évitez les sous-sols, parkings et routes submergées."],
     note:"En situation réelle, les consignes des autorités locales priment toujours."
   },
   fire: {
     title:"Incendie",
-    icon:"🔥",
+    icon:"" ,
     intro:"Priorité : évacuer rapidement et ne pas prendre de risque pour récupérer des objets.",
     steps:["Déclenchez l'alerte et appelez les secours si nécessaire.","Évacuez par les issues prévues sans utiliser l'ascenseur.","Si la fumée est présente, restez le plus bas possible.","Ne retournez jamais dans un bâtiment évacué."],
     note:"Ne tentez pas d'éteindre un incendie important vous-même."
   },
   storm: {
     title:"Tempête",
-    icon:"🌪️",
+    icon:"" ,
     intro:"Priorité : vous abriter dans un bâtiment solide et rester informé des alertes.",
     steps:["Rentrez les objets exposés si vous êtes encore en sécurité.","Restez à l'intérieur, loin des fenêtres.","Chargez votre téléphone et gardez votre kit accessible.","Évitez les déplacements non indispensables."],
     note:"Consultez les alertes et recommandations officielles."
   },
   heat: {
     title:"Canicule",
-    icon:"☀️",
+    icon:"" ,
     intro:"Priorité : limiter l'exposition à la chaleur et maintenir une bonne hydratation.",
     steps:["Buvez régulièrement sans attendre d'avoir soif.","Restez dans un endroit frais pendant les heures les plus chaudes.","Fermez volets et fenêtres lorsque l'air extérieur est plus chaud.","Surveillez les personnes vulnérables autour de vous."],
     note:"En cas de malaise important, contactez rapidement les services d'urgence."
@@ -114,4 +114,45 @@ document.getElementById("modalClose").addEventListener("click",closeModal);
 modal.addEventListener("click",e=>{if(e.target===modal)closeModal()});
 document.getElementById("goKit").addEventListener("click",()=>{closeModal();document.getElementById("kit").scrollIntoView({behavior:"smooth"});});
 document.getElementById("goPassport").addEventListener("click",()=>{closeModal();document.getElementById("passport").scrollIntoView({behavior:"smooth"});});
+
+
 document.getElementById("menuBtn").addEventListener("click",()=>showToast("Utilisez les sections Mon kit, Urgence et Passeport."));
+
+
+// Soft reveal for the history/conception section.
+
+const revealItems =
+  document.querySelectorAll(".reveal");
+
+if (
+  "IntersectionObserver" in window &&
+  revealItems.length
+) {
+
+  const observer =
+    new IntersectionObserver(
+      (entries, obs) => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add(
+              "is-visible"
+            );
+
+            obs.unobserve(entry.target);
+          }
+
+        });
+
+      },
+      {
+        threshold:0.12
+      }
+    );
+
+  revealItems.forEach(el =>
+    observer.observe(el)
+  );
+}
